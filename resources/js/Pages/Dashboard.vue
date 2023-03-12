@@ -1,17 +1,8 @@
-<script setup>
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head } from '@inertiajs/vue3';
-
-defineProps({
-  test: {
-    type: String,
-    default: 'test',
-  },
-});
-</script>
-
 <template>
-  <Head title="Dashboard"></Head>
+  <!-- <Head title="Dashboard"></Head> -->
+  <Head>
+    <title>Dashboard</title>
+  </Head>
 
   <AuthenticatedLayout>
     <template #header>
@@ -28,3 +19,21 @@ defineProps({
     </div>
   </AuthenticatedLayout>
 </template>
+
+<script>
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
+import { Head } from '@inertiajs/vue3';
+
+export default {
+  components: {
+    AuthenticatedLayout,
+    Head,
+  },
+  props: {
+    test: {
+      type: String,
+      default: 'test',
+    },
+  },
+}
+</script>
